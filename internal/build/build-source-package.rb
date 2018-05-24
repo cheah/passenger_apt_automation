@@ -90,6 +90,10 @@ if DEBIAN_NAME =~ /nginx/
   sh "rm -rf passenger/nginx-*"
   Dir.chdir("../..") do
     File.open("debian/source/include-binaries", "a") do |f|
+      Dir["debian/modules/incubator-pagespeed-ngx/psol/lib/Release/linux/x64/*"].each do |filename|
+        puts "+ Including #{filename} as binary"
+        f.puts filename
+      end
       Dir["debian/modules/passenger/doc/*.pdf"].each do |filename|
         puts "+ Including #{filename} as binary"
         f.puts filename
