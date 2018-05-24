@@ -70,4 +70,8 @@ README for Modules versions
  incubator-pagespeed-ngx
   Homepage: https://github.com/apache/incubator-pagespeed-ngx
     rm -r incubator-pagespeed-ngx/test incubator-pagespeed-ngx/.gitignore
+    psol_binary_url="$(incubator-pagespeed-ngx/scripts/format_binary_url.sh \
+                           incubator-pagespeed-ngx/PSOL_BINARY_URL)"
+    (cd incubator-pagespeed-ngx && wget $psol_binary_url && tar -xzvf $(basename $psol_binary_url) && rm -f $(basename $psol_binary_url))
+    find incubator-pagespeed-ngx -name pagespeed_automatic.a | sed -e "p;s/\.a//" | xargs -n2 mv
   Version: v1.13.35.2-stable
