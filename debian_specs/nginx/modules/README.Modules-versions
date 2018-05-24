@@ -75,3 +75,4 @@ README for Modules versions
     (cd incubator-pagespeed-ngx && wget $psol_binary_url && tar -xzvf $(basename $psol_binary_url) && rm -f $(basename $psol_binary_url))
     find incubator-pagespeed-ngx -name pagespeed_automatic.a | sed -e "p;s/\.a//" | xargs -n2 mv
   Version: v1.13.35.2-stable
+  Patch: psol-release-binary.patch

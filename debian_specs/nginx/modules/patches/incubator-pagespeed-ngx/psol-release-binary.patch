@@ -1,0 +1,37 @@
+From 40d367beede0a6370d9010b105e4d89025e9462e Mon Sep 17 00:00:00 2001
+From: Michael Cheah <cheah@kfit.com>
+Date: Thu, 24 May 2018 23:13:28 +0800
+Subject: [PATCH] Add patch for incubator-pagespeed-ngx to use psol Release
+ Binaries
+
+---
+ config       | 10 ++--------
+ 1 file changed, 2 insertions(+), 8 deletions(-)
+
+diff --git a/config b/config
+index aeb677b..d86eef2 100644
+--- a/config
++++ b/config
+@@ -159,17 +159,11 @@ PSOL, which ngx_pagespeed depends on, aren't available.  If you're trying to
+ debug PSOL you need to build it from source.  If you just want to run nginx with
+ debug-level logging you can use the Release binaries."
+       echo -n "
+-Use the available Release binaries?"
+-      read -p " [Y/n] " yn
+-      if [[ "$yn" == N* || "$yn" == n* ]]; then
+-        echo "Cancelled."
+-        exit 1
+-      fi
+-
++Using the available Release binaries..."
+       buildtype=Release
+     fi
+     psol_library_dir="$ngx_addon_dir/psol/lib/$buildtype/$os_name/$arch_name"
+-    psol_binary="$psol_library_dir/pagespeed_automatic.a"
++    psol_binary="$psol_library_dir/pagespeed_automatic"
+   fi
+ fi
+ 
+-- 
+2.17.0
+
