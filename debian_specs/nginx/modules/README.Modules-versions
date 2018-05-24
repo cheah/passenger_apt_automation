@@ -66,3 +66,8 @@ README for Modules versions
     rm -r ngx_http_substitutions_filter_module/test
   Version: v0.6.4
   Patch: dynamic-module.patch
+
+ incubator-pagespeed-ngx
+  Homepage: https://github.com/apache/incubator-pagespeed-ngx
+    rm -r incubator-pagespeed-ngx/test incubator-pagespeed-ngx/.gitignore
+  Version: v1.13.35.2-stable
